@@ -28,7 +28,7 @@ make run
 ```
 - Now you can open your browser at http://localhost:8080/aws-interface and verify the solution to the puzzle.
 
-- If you'd like to try with genuine AWS rather than aws-mock, just configure the AWS endpoint and region in `src/main/resources/aws-conf.properties` and put your AWS credentials into `src/main/resources/aws-conf.properties` and run `make && make run` again.
+- If you'd like to try with genuine AWS rather than aws-mock, just configure the AWS endpoint and region in `src/main/resources/aws-conf.properties` and put your AWS credentials into `src/main/resources/aws-credentials.properties` and run `make && make run` again.
 
 A screenshot of the ugly demo page:
 ![screenshot1](./screenshot/1.png)
@@ -40,16 +40,21 @@ A screenshot of the ugly demo page:
 - Run `make init-eclipse` and import this project into your eclipse workspace.
 
 ## To run 2 modes in Docker container ##
-- 1. Run the webapp in container:
+- Mode 1. Run the webapp in container:
 ```
+sudo docker pull jameronline/aws-interface
 sudo docker run -dit -p 8081:8080 --name=my-aws-interface jameronline/aws-interface /bin/bash
 sudo docker exec -it my-aws-interface /bin/bash
 /bin/bash /home/gradle/run-all.sh
 ```
 Wait a few seconds and locally access `http://localhost:8081/aws-interface/`
 
-- 2. Run tests in container:
+- Mode 2. Run tests in container:
 ```
+sudo docker pull jameronline/aws-interface
 sudo docker run jameronline/aws-interface /bin/bash /home/gradle/run-test.sh
 ```
+
+## TODO ##
+- Enrich the test coverage
 
