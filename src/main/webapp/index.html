@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>aws-interface</title>
+<script type="text/javascript" src="third_party/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Qty:</td>
+            <td><input id="iptQty" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td><input id="iptName" type="text" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button id="iptDeploy" type="button" onclick="fnOnDeploy()">Deploy</button></td>
+        </tr>
+    </table>
+
+    <br />
+
+    <table id="instList" border="1">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>public ip</th>
+            <th>boot image</th>
+            <th>type</th>
+            <th>state</th>
+            <th>destroy</th>
+        </tr>
+    </table>
+
+    <p id="qtyIsPrime"></p>
+
+    <button id="iptRefresh" type="button" onclick="fnRefreshAll()">Refresh</button>
+
+</body>
+</html>

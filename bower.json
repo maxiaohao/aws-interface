@@ -1,0 +1,10 @@
+{
+  "name": "aws-interface",
+  "version": "0.1",
+  "authors": [
+    "xma <maxiaohao@gmail.com>"
+  ],
+  "dependencies": {
+    "jquery": "jquery/jquery#~1.12.4"
+  }
+}

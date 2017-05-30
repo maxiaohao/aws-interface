@@ -1,0 +1,26 @@
+# Trivial files
+*.class
+*~
+*.diff
+*.patch
+*.swp
+*.out
+*.log
+
+# Package Files #
+*.jar
+*.war
+
+# Folders #
+build/
+bin/
+node_modules/
+src/main/webapp/third_party/
+
+# Project factets
+.classpath
+.project
+.settings
+.gradle
+gradle.properties
+
