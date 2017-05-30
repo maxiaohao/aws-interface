@@ -19,7 +19,7 @@ git clone https://github.com/treelogic-swe/aws-mock.git
 cd aws-mock
 gradle jettyRun
 ```
-- Then open another console and run aws-interface:
+- Then open another console and run this aws-interface:
 ```
 git clone https://github.com/maxiaohao/aws-interface.git
 cd aws-interface
@@ -30,7 +30,7 @@ make run
 
 - If you'd like to try with genuine AWS rather than aws-mock, just configure the AWS endpoint and region in `src/main/resources/aws-conf.properties` and put your AWS credentials into `src/main/resources/aws-conf.properties` and run `make && make run` again.
 
-- Screenshot:
+A screenshot of the ugly demo page:
 ![screenshot1](./screenshot/1.png)
 
 ## To run the test ##
