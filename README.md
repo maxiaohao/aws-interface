@@ -4,7 +4,26 @@ aws-interface
 ## Overview ##
 This project is a solution to a puzzle for interfacing AWS from justdigitalpeople.
 
-## Prerequisites (Linux) ##
+## Quick Start - How to run 2 modes in Docker container ##
+- Mode 1. Run the webapp in container:
+```
+sudo docker pull jameronline/aws-interface
+sudo docker run -dit -p 8081:8080 --name=my-aws-interface jameronline/aws-interface /bin/bash
+sudo docker exec -it my-aws-interface /bin/bash
+/bin/bash /home/gradle/run-all.sh
+```
+Wait a few seconds and locally in your browser access `http://localhost:8081/aws-interface`
+
+A screenshot of the ugly demo page:
+![screenshot1](./screenshot/1.png)
+
+- Mode 2. Run tests in container:
+```
+sudo docker pull jameronline/aws-interface
+sudo docker run jameronline/aws-interface /bin/bash /home/gradle/run-test.sh
+```
+
+## Setup prerequisites (Linux) ##
 On Ubuntu 16.04 LTS or equivalent and have the following in your PATH:
 - GNU Make 4.1+
 - JDK 1.8+
@@ -30,30 +49,12 @@ make run
 
 - If you'd like to try with genuine AWS rather than aws-mock, just configure the AWS endpoint and region in `src/main/resources/aws-conf.properties` and put your AWS credentials into `src/main/resources/aws-credentials.properties` and run `make && make run` again.
 
-A screenshot of the ugly demo page:
-![screenshot1](./screenshot/1.png)
 
 ## To run the test ##
 - Run `make test`, though there is only a little code covered for now.
 
 ## To develop in eclipse ##
 - Run `make init-eclipse` and import this project into your eclipse workspace.
-
-## To run 2 modes in Docker container ##
-- Mode 1. Run the webapp in container:
-```
-sudo docker pull jameronline/aws-interface
-sudo docker run -dit -p 8081:8080 --name=my-aws-interface jameronline/aws-interface /bin/bash
-sudo docker exec -it my-aws-interface /bin/bash
-/bin/bash /home/gradle/run-all.sh
-```
-Wait a few seconds and locally access `http://localhost:8081/aws-interface/`
-
-- Mode 2. Run tests in container:
-```
-sudo docker pull jameronline/aws-interface
-sudo docker run jameronline/aws-interface /bin/bash /home/gradle/run-test.sh
-```
 
 ## TODO ##
 - Enrich the test coverage
