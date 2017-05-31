@@ -12,7 +12,7 @@ sudo docker run -dit -p 8081:8080 --name=my-aws-interface jameronline/aws-interf
 sudo docker exec -it my-aws-interface /bin/bash
 /bin/bash /home/gradle/run-all.sh
 ```
-Wait a few seconds (up to 2 mins as openJDK is quite slow in that container) and in your browser access http://localhost:8081/aws-interface
+Wait a few seconds (up to 3 mins as there is a process to download dependency jar files from maven repo) and in your browser access http://localhost:8081/aws-interface
 
 A screenshot of the ugly demo page:
 ![screenshot1](./screenshot/1.png)
